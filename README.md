@@ -20,13 +20,8 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     - CryptEN
     ```pip install crypten```
     
-3. Open the MNIST ipynb file to see an example of using TenSEAL CKKS library to encrypt our Poly1Net and infer from MNIST. To learn how to use TenSEAL to encrypt your custom architectures and data, check the tutorials at https://github.com/OpenMined/TenSEAL
-4. You can also
-
-In the ```main.py```, you can specify the network you want to train(for example):
-
-```
-model = alexkerv(num_classes=10)
+3. Open the MNIST ipynb file to see an example of using TenSEAL CKKS library to encrypt our Poly1Net and infer from MNIST. To learn how to use TenSEAL to encrypt your custom architectures and data, check the tutorials [here](https://github.com/OpenMined/TenSEAL)
+4. You can also use the mpc_launcher.py to run the SMPC on your model architecture. For your own architectures, edit the ```MPC.py``` file and save. Then, run ```python mpc_launcher.py``` from the terminal. To learn more about Crypten, how to use, check out the tutorials and examples [here](https://github.com/facebookresearch/CrypTen)
 
 ##Note
 Please contact me if there are issues within the codebase. 
