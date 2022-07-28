@@ -21,7 +21,7 @@ def train_test(model, train_loader, test_loader, n_epochs):
         train_accuracy = 0
         train_samples = 0
         train_loss = 0.0
-        for data, targets in train_loader:
+        for i, (data, targets) in tqdm(enumerate(train_loader)):
             data = data.to(device=device)
             targets = targets.to(device=device)
             optimizer.zero_grad()
