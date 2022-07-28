@@ -1,7 +1,5 @@
-# PolyKervNets
-PolyKervNets: Activation-free Neural Networks For Efficient Private Inference
-
-In this work, we propose a FHE and MPC suitable/efficient DNN architecture based on optimized polynomial kervolution from Kervolutional Neural Network (https://github.com/wang-chen/kervolution/) called _**PolyKervNet**_, which completely eliminates the need for non-linear activation and max pooling layers.
+# PolyKervNets: Activation-free Neural Networks For Efficient Private Inference
+With the advent of cloud computing, machine learning as a service (MLaaS) has become a growing phenomenon with the potential to address many real-world problems. In an untrusted cloud environment, privacy concerns of users is a major impediment to the adoption of MLaaS. To alleviate these privacy issues and preserve data confidentiality, several private inference (PI) protocols have been proposed in recent years based on cryptographic tools like Fully Homomorphic Encryption (FHE) and Secure Multiparty Computation (MPC). Deep neural networks (DNN) have been the architecture of choice in most MLaaS deployments. One of the core challenges in developing PI protocols for DNN inference is the substantial costs involved in implementing non-linear activation layers such as Rectified Linear Unit (ReLU). This has spawned research into the search for accurate, but efficient approximations of the ReLU function and neural architectures that operate on a stringent ReLU budget. While these methods improve efficiency and ensure data confidentiality, they often come at a significant cost to prediction accuracy. In this work, we propose a DNN architecture based on polynomial kervolution called \emph{PolyKervNet}, which completely eliminates the need for non-linear activation and max pooling layers. We demonstrate that even shallow DNN architectures based on polynomial kervolution can match (or even exceed) the accuracy of standard convolutional neural networks (CNN) such as ResNet-18 on many image classification tasks. At the same time, PolyKervNets are both FHE and MPC-friendly - they enable FHE-based encrypted inference without any approximations and MPC-based PI protocols without any use of garbled circuits.
 
 ## How to use
 1. Clone this repository
@@ -14,14 +12,8 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     - Pytorch (v1.10, v1.11)
    ```conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch```
     
-    - TenSEAL
-    ```pip install tenseal```
+    - ONNX
+    ```pip install onnx```
     
-    - CryptEN
-    ```pip install crypten```
-    
-3. Open the MNIST ipynb file to see an example of using TenSEAL CKKS library to encrypt our Poly1Net and infer from MNIST. To learn how to use TenSEAL to encrypt your custom architectures and data, check the tutorials [here](https://github.com/OpenMined/TenSEAL)
-4. You can also use the mpc_launcher.py to run the SMPC on your model architecture. For your own architectures, edit the ```MPC.py``` file and save. Then, run ```python mpc_launcher.py``` from the terminal. To learn more about Crypten, how to use, check out the tutorials and examples [here](https://github.com/facebookresearch/CrypTen)
-
-##Note
-Please contact me if there are issues within the codebase. 
+3. To run:
+    - ```python main.py```
