@@ -7,7 +7,7 @@ import torchvision.transforms as transforms
 import numpy as np
 from PolyKervNet.PolyKervNet import Kerv2d
 # import tenseal as ts
-from CustomDataset import DatasetFromSubset
+from Scripts.CustomDataset import DatasetFromSubset
 from tqdm import tqdm
 import os
 import torch.nn.functional as F
