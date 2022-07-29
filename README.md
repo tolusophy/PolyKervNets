@@ -10,10 +10,21 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 
 2. Pip/Conda install the following packages
     - Pytorch (v1.10, v1.11)
-   ```conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch```
+   ```
+   conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+   ```
     
     - ONNX
-    ```pip install onnx```
+    ```
+    pip install onnx
+    ```
     
 3. To run:
     - ```python main.py```
+
+4. To reproduce our Delphi based private inference results ([paper](https://eprint.iacr.org/2020/050.pdf)):
+    -   Clone the Delphi repository
+    ```
+    git clone https://github.com/mc2-project/delphi
+    ```
+    - Follow the instructions on the [Delphi](https://github.com/mc2-project/delphi) repository
