@@ -5,7 +5,7 @@
 Link to paper: Coming Soon
 
 # Plaintext Results on Image Classification
-## Ablation
+## Ablation (Impact of balance c_{p})
 | Impact of cp | PKL-5 | PKA-8 | PKV-16 | PKR-18 | PKR-14 | PKR-10 | PKR-S |
 |:------------:|:-----:|:-----:|:------:|:------:|:------:|:------:|:-----:|
 |       0      | 65.96 | 71.64 |  81.13 |  82.1  |  83.07 |  84.22 | 75.18 |
