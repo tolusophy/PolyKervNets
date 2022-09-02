@@ -5,7 +5,14 @@
 Link to paper: Coming Soon
 
 # Plaintext Results on Image Classification
-
+## Ablation
+Impact of cp,PKL-5,PKA-8,PKV-16,PKR-18,PKR-14,PKR-10,PKR-S
+0,65.96,71.64,81.13,82.1,83.07,84.22,75.18
+0.5,69.55,80.31,88.91,89.6,89.84,91.35,83.38
+0.75,69.55,80.07,89.84,89.53,89.84,91.17,83.27
+1,69.16,79.97,90.15,90.31,90.6,91.88,84.11
+2,64.18,71.44,80.37,81.17,82.02,82.26,74.43
+3,62.93,70.11,78.1,80.21,80.35,80.3,71.31
 
 ## How to use
 1. Clone this repository or use the Polynomial Convolution by the original [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
