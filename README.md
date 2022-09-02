@@ -34,6 +34,13 @@ Link to paper: Coming Soon
 | PKV-16 (Ours) |     90.2    |    381.1    |    31.5x    | PKR-18 (Ours) |    70.97    |    587.9    |    29.7x    |
 
 ### TenSEAL CKKS Result
+| VGG16 Variant | Accuracy(%) | Latency(ms) | Params(M) |
+|:-------------:|:-----------:|:-----------:|:---------:|
+|      ReLU     |     98.5    |      NA     |   17298   |
+|  PolyApprox-1 |    98.36    |    961.7    |   17298   |
+|  PolyApprox-2 |    98.57    |    890.3    |   17298   |
+|     Square    |    98.27    |    866.1    |   17298   |
+|  PKN-3 (Ours) |    98.45    |    783.4    |    2767   |
 
 ### How to use
 1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
