@@ -42,7 +42,7 @@ Link to paper: Coming Soon
 |     Square    |    98.27    |    866.1    |   17298   |
 |  PKN-3 (Ours) |    98.45    |    783.4    |    2767   |
 
-### How to use
+# How to use
 1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
