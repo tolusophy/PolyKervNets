@@ -24,23 +24,16 @@ Link to paper: Coming Soon
 
 # Ciphertext Results on Image Classification
 ### Delphi Result
-|      VGG16      | Accuracy(%) | Latency(ms) | Improvement |
-|:---------------:|:-----------:|:-----------:|:-----------:|
-|     Vanilla     |    92.81    |   12018.1   |             |
-|    DeepReduce   |     92.6    |    6487.3   |     1.9x    |
-|   PolyApprox-1  |    88.14    |    1180.7   |    10.2x    |
-|   PolyApprox-2  |    87.37    |    419.7    |    28.6x    |
-|      Square     |    80.19    |    408.5    |    29.4x    |
-| PolyKerv (Ours) |     90.2    |    381.1    |    31.5x    |
+|     VGG16     | Accuracy(%) | Latency(ms) | Improvement |    Resnet18   | Accuracy(%) | Latency(ms) | Improvement |
+|:-------------:|:-----------:|:-----------:|:-----------:|:-------------:|:-----------:|:-----------:|:-----------:|
+|    Vanilla    |    92.81    |   12018.1   |             |    Vanilla    |    72.57    |   17437.4   |             |
+|   DeepReduce  |     92.6    |    6487.3   |     1.9x    |   DeepReduce  |    72.53    |    9481.1   |     1.8x    |
+|  PolyApprox-1 |    88.14    |    1180.7   |    10.2x    |  PolyApprox-1 |    66.80    |    1578.3   |    11.1x    |
+|  PolyApprox-2 |    87.37    |    419.7    |    28.6x    |  PolyApprox-2 |    67.45    |    606.3    |    28.8x    |
+|     Square    |    80.19    |    408.5    |    29.4x    |     Square    |    55.70    |    551.4    |    31.6x    |
+| PKV-16 (Ours) |     90.2    |    381.1    |    31.5x    | PKR-18 (Ours) |    70.97    |    587.9    |    29.7x    |
 
-|     Resnet18    | Accuracy(%) | Latency(ms) | Improvement |
-|:---------------:|:-----------:|:-----------:|:-----------:|
-|     Vanilla     |    72.57    |   17437.4   |             |
-|    DeepReduce   |    72.53    |    9481.1   |     1.8x    |
-|   PolyApprox-1  |    66.80    |    1578.3   |    11.1x    |
-|   PolyApprox-2  |    67.45    |    606.3    |    28.8x    |
-|      Square     |    55.70    |    551.4    |    31.6x    |
-| PolyKerv (Ours) |    70.97    |    587.9    |    29.7x    |
+### TenSEAL CKKS Result
 
 ### How to use
 1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
