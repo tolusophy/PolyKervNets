@@ -5,7 +5,7 @@
 Link to paper: Coming Soon
 
 # Plaintext Results on Image Classification
-## Ablation (Impact of balance cp)
+### Ablation (Impact of balance cp)
 | Impact of cp | PKL-5 | PKA-8 | PKV-16 | PKR-18 | PKR-14 | PKR-10 | PKR-S |
 |:------------:|:-----:|:-----:|:------:|:------:|:------:|:------:|:-----:|
 |       0      | 65.96 | 71.64 |  81.13 |  82.1  |  83.07 |  84.22 | 75.18 |
@@ -15,7 +15,7 @@ Link to paper: Coming Soon
 |       2      | 64.18 | 71.44 |  80.37 |  81.17 |  82.02 |  82.26 | 74.43 |
 |       3      | 62.93 | 70.11 |  78.1  |  80.21 |  80.35 |  80.3  | 71.31 |
 
-## How to use
+### How to use
 1. Clone this repository or use the Polynomial Convolution by the original [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
