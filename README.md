@@ -8,7 +8,7 @@ Link to paper: Coming Soon
 
 
 ## How to use
-1. Clone this repository
+1. Clone this repository or use the Polynomial Convolution by the original [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
@@ -20,7 +20,7 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
    conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
    ```
     
-    - ONNX
+    - ONNX: You will need this in Delphi if you are using pytorch
     ```
     pip install onnx
     ```
