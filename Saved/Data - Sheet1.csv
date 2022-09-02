@@ -10,7 +10,7 @@ Multiplicative Depth,Top 1 Accuracy% ,Variant,Model
 16,88.42,PolyApprox-1,VGG16
 16,87.35,PolyApprox-2,VGG16
 16,80.11,Square,VGG16
-14,91.5,PKN (Ours),VGG16
+14,91.15,PKN (Ours),VGG16
 18,88.97,PolyApprox-1,ResNet18
 18,89.42,PolyApprox-2,ResNet18
 18,84.17,Square,ResNet18
