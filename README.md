@@ -17,7 +17,7 @@ Link to paper: Coming Soon
 |       3      | 62.93 | 70.11 |  78.1  |  80.21 |  80.35 |  80.3  | 71.31 |
 
 ### How to use
-1. Clone this repository or use the Polynomial Convolution by the original [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
+1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
