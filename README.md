@@ -16,6 +16,10 @@ Link to paper: Coming Soon
 |       2      | 64.18 | 71.44 |  80.37 |  81.17 |  82.02 |  82.26 | 74.43 |
 |       3      | 62.93 | 70.11 |  78.1  |  80.21 |  80.35 |  80.3  | 71.31 |
 
+![chart (1)](https://user-images.githubusercontent.com/45424924/188142302-9bcbf43f-f7a1-47bc-8e31-86b4ee0347c6.png)
+
+### CIFAR-10 Result (Impact of balance cp)
+
 ![output](https://user-images.githubusercontent.com/45424924/188141151-b6ee943b-082c-4d46-8a04-175583dd8fbe.png)
 
 ### How to use
