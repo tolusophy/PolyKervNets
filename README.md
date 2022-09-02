@@ -18,9 +18,29 @@ Link to paper: Coming Soon
 
 ![chart (1)](https://user-images.githubusercontent.com/45424924/188142302-9bcbf43f-f7a1-47bc-8e31-86b4ee0347c6.png)
 
-### CIFAR-10 Result (Impact of balance cp)
+### CIFAR-10 Result
 
 ![output](https://user-images.githubusercontent.com/45424924/188141151-b6ee943b-082c-4d46-8a04-175583dd8fbe.png)
+
+# Ciphertext Results on Image Classification
+### Delphi Result
+|      VGG16      | Accuracy(%) | Latency(ms) | Improvement |
+|:---------------:|:-----------:|:-----------:|:-----------:|
+|     Vanilla     |    92.81    |   12018.1   |             |
+|    DeepReduce   |     92.6    |    6487.3   |     1.9x    |
+|   PolyApprox-1  |    88.14    |    1180.7   |    10.2x    |
+|   PolyApprox-2  |    87.37    |    419.7    |    28.6x    |
+|      Square     |    80.19    |    408.5    |    29.4x    |
+| PolyKerv (Ours) |     90.2    |    381.1    |    31.5x    |
+
+|     Resnet18    | Accuracy(%) | Latency(ms) | Improvement |
+|:---------------:|:-----------:|:-----------:|:-----------:|
+|     Vanilla     |    72.57    |   17437.4   |             |
+|    DeepReduce   |    72.53    |    9481.1   |     1.8x    |
+|   PolyApprox-1  |    66.80    |    1578.3   |    11.1x    |
+|   PolyApprox-2  |    67.45    |    606.3    |    28.8x    |
+|      Square     |    55.70    |    551.4    |    31.6x    |
+| PolyKerv (Ours) |    70.97    |    587.9    |    29.7x    |
 
 ### How to use
 1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
