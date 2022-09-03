@@ -48,6 +48,7 @@ Link to paper: Coming Soon
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 ```
+<p align="justify"> Note that PolyKerv performance is heavily dependent on the following factors: Architecture, Learning Rate, polynomial degree (dp) and balance factor (cp). Try to run as much experiments as you can. A sample here is PKA-8 on CIFAR-10 giving 79-80% accuracy.</p>
 
 2. Pip/Conda install the following packages
     - Pytorch (v1.10, v1.11)
