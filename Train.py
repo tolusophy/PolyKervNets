@@ -10,6 +10,10 @@ import torch.optim as optim
 from Models import PKN3, PKL5, PKA8, PKV16, PKR10, PKR14, PKR18, PKRS
 
 transform = transforms.Compose([transforms.RandomHorizontalFlip(p=0.5),transforms.transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+# transform = transforms.Compose([transforms.Grayscale(3), transforms.Resize(32),transforms.ToTensor()])
+
+# train_data = datasets.MNIST('data', train=True, download=True, transform=transform)
+# test_data = datasets.MNIST('data', train=False, download=True, transform=transform)
 
 train_data = datasets.CIFAR10('data', train=True, download=True, transform=transform)
 test_data = datasets.CIFAR10('data', train=False, download=True, transform=transform)
@@ -25,7 +29,7 @@ def main(model, train_loader, test_loader, n_epochs):
     model = model.to(device=device)
     criterion=nn.CrossEntropyLoss()
     optimizer=optim.Adam(model.parameters(),lr=3e-5)
-    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=80, gamma=0.1)
+    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=5, gamma=0.1)
     model.train()
     for epoch in range(1, n_epochs+1):
         train_accuracy = 0
@@ -68,4 +72,4 @@ def main(model, train_loader, test_loader, n_epochs):
             
     return model
 
-PolyKerv = main(PKR10(), train_loader, test_loader, 200)
+PolyKerv = main(PKA8(), train_loader, test_loader, 200)
