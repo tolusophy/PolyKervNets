@@ -7,16 +7,18 @@ from tqdm import tqdm
 import os
 import torch.nn.functional as F
 import torch.optim as optim
-from Models import PKN3, PKL5, PKA8, PKV16, PKR10, PKR14, PKR18, PKRS
+from Models import PKL5, PKA8, PKR10, PKR14, PKR18, PKRS
 
-transform = transforms.Compose([transforms.RandomHorizontalFlip(p=0.5),transforms.transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-# transform = transforms.Compose([transforms.Grayscale(3), transforms.Resize(32),transforms.ToTensor()])
+train_transform = transforms.Compose([transforms.RandomCrop(32, padding=4),
+                                transforms.RandomHorizontalFlip(p=0.5),
+                                transforms.transforms.ToTensor(), 
+                                transforms.Normalize((0.4914, 0.4822, 0.4465),(0.2023, 0.1994, 0.2010))])
 
-# train_data = datasets.MNIST('data', train=True, download=True, transform=transform)
-# test_data = datasets.MNIST('data', train=False, download=True, transform=transform)
+test_transform = transforms.Compose([transforms.transforms.ToTensor(), 
+                                transforms.Normalize((0.4914, 0.4822, 0.4465),(0.2023, 0.1994, 0.2010))])
 
-train_data = datasets.CIFAR10('data', train=True, download=True, transform=transform)
-test_data = datasets.CIFAR10('data', train=False, download=True, transform=transform)
+train_data = datasets.CIFAR10('data', train=True, download=True, transform=train_transform)
+test_data = datasets.CIFAR10('data', train=False, download=True, transform=test_transform)
 
 batch_size = 64
 
@@ -72,4 +74,4 @@ def main(model, train_loader, test_loader, n_epochs):
             
     return model
 
-PolyKerv = main(PKA8(), train_loader, test_loader, 200)
+PolyKerv = main(PKR10(), train_loader, test_loader, 200)
