@@ -30,7 +30,7 @@ Link to paper: Coming Soon
 |   DeepReduce  |     92.6    |    6487.3   |     1.9x    |   DeepReduce  |    72.53    |    9481.1   |     1.8x    |
 |  PolyApprox-1 |    88.14    |    1180.7   |    10.2x    |  PolyApprox-1 |    66.80    |    1578.3   |    11.1x    |
 |  PolyApprox-2 |    87.37    |    419.7    |    28.6x    |  PolyApprox-2 |    67.45    |    606.3    |    28.8x    |
-|     Square    |    80.19    |    408.5    |    29.4x    |     Square    |    55.70    |    551.4    |    31.6x    |
+|     Square    |    80.19    |    408.5    |    29.4x    |     Square    |    61.70    |    551.4    |    31.6x    |
 | PKV-16 (Ours) |     90.2    |    381.1    |    31.5x    | PKR-18 (Ours) |    70.97    |    587.9    |    29.7x    |
 
 ### TenSEAL CKKS Result
