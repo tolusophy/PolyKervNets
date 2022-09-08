@@ -17,7 +17,7 @@ Link to paper: Coming Soon
 |       2      | 64.18 | 71.44 |  80.37 |  81.17 |  82.02 |  82.26 | 74.43 |
 |       3      | 62.93 | 70.11 |  78.1  |  80.21 |  80.35 |  80.3  | 71.31 |
 
-![chart (1)](https://user-images.githubusercontent.com/45424924/188142302-9bcbf43f-f7a1-47bc-8e31-86b4ee0347c6.png)
+<img src="https://user-images.githubusercontent.com/45424924/188142302-9bcbf43f-f7a1-47bc-8e31-86b4ee0347c6.png" width="850">
 
 ### CIFAR-10 Result
 
