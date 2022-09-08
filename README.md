@@ -20,8 +20,7 @@ Link to paper: Coming Soon
 <img src="https://user-images.githubusercontent.com/45424924/188142302-9bcbf43f-f7a1-47bc-8e31-86b4ee0347c6.png" width="850">
 
 ### CIFAR-10 Result
-
-![output](https://user-images.githubusercontent.com/45424924/188141151-b6ee943b-082c-4d46-8a04-175583dd8fbe.png)
+<img src="https://user-images.githubusercontent.com/45424924/188141151-b6ee943b-082c-4d46-8a04-175583dd8fbe.png" width="850">
 
 # Ciphertext Results on Image Classification
 ### Delphi Result
