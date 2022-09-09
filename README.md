@@ -34,7 +34,7 @@ Link to paper: Coming Soon
 | PKV-16 (Ours) |     90.2    |    381.1    |    31.5x    | PKR-18 (Ours) |    70.97    |    587.9    |    29.7x    |
 
 ### TenSEAL CKKS Result
-| VGG16 Variant | Accuracy(%) | Latency(ms) | Params(M) |
+| CNN-3 Variant | Accuracy(%) | Latency(ms) | Params(M) |
 |:-------------:|:-----------:|:-----------:|:---------:|
 |      ReLU     |     98.5    |      NA     |   17298   |
 |  PolyApprox-1 |    98.36    |    961.7    |   17298   |
