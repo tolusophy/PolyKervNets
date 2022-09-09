@@ -3,7 +3,7 @@ import torch.nn as nn
 from torchvision import datasets
 import torchvision.transforms as transforms
 import numpy as np
-from ModelPKN import Kerv2d
+from Models.ModelPKN import Kerv2d
 from tqdm import tqdm
 import os
 import torch.nn.functional as F
@@ -16,10 +16,11 @@ class PKL5(nn.Sequential):
         self.pool = nn.AvgPool2d(2, 2)
         self.kerv2 = Kerv2d(6, 16, 5)
         self.fc = nn.Linear(16 * 5 * 5, num_classes)
+        self.drop = nn.Dropout(p=0.2, inplace=False)
 
     def forward(self, x):
-        x = self.pool(self.kerv1(x))
-        x = self.pool(self.kerv2(x))
+        x = self.pool(self.drop(self.kerv1(x)))
+        x = self.pool(self.drop(self.kerv2(x)))
         x = x.reshape(-1, 16 * 5 * 5)
         x = self.fc(x)
         return x
