@@ -7,7 +7,13 @@ from tqdm import tqdm
 import os
 import torch.nn.functional as F
 import torch.optim as optim
-from Models import PKL5, PKA8, PKR10, PKR14, PKR18, PKRS
+from Models.PKN3 import PKN3
+from Models.PKL5 import PKL5
+from Models.PKA8 import PKA8
+from Models.PKV import PKV
+from Models.PKR10 import PKR10
+from Models.PKR14 import PKR14
+from Models.PKR18 import PKR18
 
 train_transform = transforms.Compose([transforms.RandomCrop(32, padding=4),
                                 transforms.RandomHorizontalFlip(p=0.5),
@@ -31,7 +37,7 @@ def main(model, train_loader, test_loader, n_epochs):
     model = model.to(device=device)
     criterion=nn.CrossEntropyLoss()
     optimizer=optim.Adam(model.parameters(),lr=3e-5)
-    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=5, gamma=0.1)
+    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=60, gamma=0.1)
     model.train()
     for epoch in range(1, n_epochs+1):
         train_accuracy = 0
@@ -74,4 +80,4 @@ def main(model, train_loader, test_loader, n_epochs):
             
     return model
 
-PolyKerv = main(PKR10(), train_loader, test_loader, 200)
+PolyKerv = main(PKA8(), train_loader, test_loader, 200)
