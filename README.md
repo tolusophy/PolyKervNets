@@ -61,7 +61,7 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     -   Polynomial degree (dp)
     -   Balance factor (cp). 
     
-Try to run as much experiments as you can. A sample here is PKA-8 on CIFAR-10 giving 79-80% accuracy.</p>
+Try to run as much experiments as you can.</p>
 
 2. Pip/Conda install the following packages
     - Pytorch (v1.10, v1.11)
