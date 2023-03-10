@@ -38,8 +38,8 @@ def main(model, train_loader, test_loader, n_epochs):
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     pytorch_total_params
     criterion=nn.CrossEntropyLoss()
-    optimizer=optim.SGD(model.parameters(),lr=1e-2)
-    clr = optim.lr_scheduler.CyclicLR(optimizer, base_lr=3e-7, max_lr=1e-2)
+    optimizer=optim.SGD(model.parameters(),lr=3e-4)
+    clr = optim.lr_scheduler.CyclicLR(optimizer, base_lr=3e-7, max_lr=3e-4)
     steplr = optim.lr_scheduler.StepLR(optimizer,step_size=50, gamma=0.7)
     model.train()
     for epoch in range(1, n_epochs+1):
@@ -58,10 +58,10 @@ def main(model, train_loader, test_loader, n_epochs):
             train_samples += predictions.size(0)
             train_accuracy += (predictions == targets).sum()
             train_loss += loss.item()
-            clr.step()
 
         # calculate average losses
         train_loss = train_loss / len(train_loader)
+        clr.step()
         steplr.step()
 
         with torch.no_grad():
