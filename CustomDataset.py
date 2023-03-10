@@ -1,12 +1,9 @@
 #import required libraries
-
 import torch
 from torchvision import datasets,transforms
 import os
 
-
 #define a custom dataset class
-
 class DatasetFromSubset(torch.utils.data.Dataset):
     def __init__(self, subset, transform=None):
         self.subset = subset
