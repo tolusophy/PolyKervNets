@@ -7,26 +7,26 @@ from tqdm import tqdm
 import os
 import torch.nn.functional as F
 import torch.optim as optim
-from Models.PKN3 import PKN3
-from Models.PKL5 import PKL5
-from Models.PKA8 import PKA8
-from Models.PKV import PKV
-from Models.PKR10 import PKR10
-from Models.PKR14 import PKR14
-from Models.PKR18 import PKR18
+from Scripts.model import model
 
-train_transform = transforms.Compose([transforms.RandomCrop(32, padding=4),
-                                transforms.RandomHorizontalFlip(p=0.5),
+torch.autograd.set_detect_anomaly(True)
+
+train_transform = transforms.Compose([transforms.RandomHorizontalFlip(p=0.5),
+                                transforms.ColorJitter(brightness=.5, hue=.3),
+                                transforms.Resize(256),
+                                transforms.RandomCrop(224),
                                 transforms.transforms.ToTensor(), 
                                 transforms.Normalize((0.4914, 0.4822, 0.4465),(0.2023, 0.1994, 0.2010))])
 
-test_transform = transforms.Compose([transforms.transforms.ToTensor(), 
+test_transform = transforms.Compose([transforms.Resize(256),
+                                transforms.RandomCrop(224),
+                                transforms.transforms.ToTensor(), 
                                 transforms.Normalize((0.4914, 0.4822, 0.4465),(0.2023, 0.1994, 0.2010))])
 
 train_data = datasets.CIFAR10('data', train=True, download=True, transform=train_transform)
 test_data = datasets.CIFAR10('data', train=False, download=True, transform=test_transform)
 
-batch_size = 64
+batch_size = 32
 
 train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size, shuffle=False)
@@ -35,9 +35,12 @@ def main(model, train_loader, test_loader, n_epochs):
     # model in training mode
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = model.to(device=device)
+    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    pytorch_total_params
     criterion=nn.CrossEntropyLoss()
-    optimizer=optim.Adam(model.parameters(),lr=3e-5)
-    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=60, gamma=0.1)
+    optimizer=optim.SGD(model.parameters(),lr=1e-2)
+    clr = optim.lr_scheduler.CyclicLR(optimizer, base_lr=3e-7, max_lr=1e-2)
+    steplr = optim.lr_scheduler.StepLR(optimizer,step_size=50, gamma=0.7)
     model.train()
     for epoch in range(1, n_epochs+1):
         train_accuracy = 0
@@ -55,10 +58,11 @@ def main(model, train_loader, test_loader, n_epochs):
             train_samples += predictions.size(0)
             train_accuracy += (predictions == targets).sum()
             train_loss += loss.item()
+            clr.step()
 
         # calculate average losses
         train_loss = train_loss / len(train_loader)
-        scheduler.step()
+        steplr.step()
 
         with torch.no_grad():
             model.eval()
@@ -80,4 +84,4 @@ def main(model, train_loader, test_loader, n_epochs):
             
     return model
 
-PolyKerv = main(PKA8(), train_loader, test_loader, 200)
+PolyKerv = main(model, train_loader, test_loader, 1000)
