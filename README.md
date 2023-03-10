@@ -42,13 +42,26 @@ Link to paper: Coming Soon
 |     Square    |    98.27    |    866.1    |   17298   |
 |  PKN-3 (Ours) |    98.45    |    783.4    |    2767   |
 
+# Future Work
+PolyKervNets in DNNs are very unstable. One requires careful hyperparameter tuning in deeper neural networks to get it right. Future work in this domain include:
+1.  Optimized Architectural design of PKNs for DNNs
+2.  Hyperparameter Tuning for optimal performance of PKNs
+3.  Novel methods to replace PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
+4.  Dynamic auto-generation of polynomial functions for stabilized ReLU replacements.
+
 # How to use
 1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 ```
-<p align="justify"> Note that PolyKerv performance is heavily dependent on the following factors: Architecture, Learning Rate, polynomial degree (dp) and balance factor (cp). Try to run as much experiments as you can. A sample here is PKA-8 on CIFAR-10 giving 79-80% accuracy.</p>
+<p align="justify"> Note that PolyKerv performance is heavily dependent on the following factors: 
+    -   Architecture
+    -   Learning Rate
+    -   Polynomial degree (dp)
+    -   Balance factor (cp). 
+    
+Try to run as much experiments as you can. A sample here is PKA-8 on CIFAR-10 giving 79-80% accuracy.</p>
 
 2. Pip/Conda install the following packages
     - Pytorch (v1.10, v1.11)
