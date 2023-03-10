@@ -45,10 +45,10 @@ Link to paper: Coming Soon
 # Future Work
 Our major observation was how unstable PKNs are. We were unsuccessful in training PKN-50 (ResNet-50). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right. Future work in this domain include:
 
-1.  Optimized Architectural design of PKNs for DNNs
-2.  Hyperparameter Tuning for optimal performance of deep PKNs
-3.  Novel and stable variants of PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
-4.  Dynamic Universal Tuning for better generations of approximate ReLU replacements.
+1. Optimized Architectural design of PKNs for DNNs
+2. Hyperparameter Tuning for optimal performance of deep PKNs
+3. Novel and stable variants of PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
+4. Dynamic Universal Tuning for better generations of approximate ReLU replacements.
 
 # How to use
 1. Use the Kerv2D by the amazing Chen Wang (RECOMMENDED), the "Kervolutional Neural Network" [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py). Otherwise, clone this repository.
@@ -79,3 +79,12 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     git clone https://github.com/mc2-project/delphi
     ```
     - Follow the instructions on the [Delphi](https://github.com/mc2-project/delphi) repository
+
+# To do:
+- [X] Create a repository for PKNs.
+- [X] Show examples [@model.py](https://github.com/Ti-Oluwanimi/PolyKervNets/blob/main/Scripts/model.py)
+- [X] Create a wrapper for pretrained examples or called models
+- [] Notebooks for easier use/Tutorials
+- [] Add links to pretrained PKNs
+- [] Add codes for other models
+- [] Create a TensorFlow version
