@@ -43,25 +43,19 @@ Link to paper: Coming Soon
 |  PKN-3 (Ours) |    98.45    |    783.4    |    2767   |
 
 # Future Work
-PolyKervNets in DNNs are very unstable. One requires careful hyperparameter tuning in deeper neural networks to get it right. Future work in this domain include:
+Our major observation was how unstable PKNs are. We were unsuccessful in training PKN-50 (ResNet-50). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right. Future work in this domain include:
+
 1.  Optimized Architectural design of PKNs for DNNs
-2.  Hyperparameter Tuning for optimal performance of PKNs
-3.  Novel methods to replace PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
-4.  Dynamic auto-generation of polynomial functions for stabilized ReLU replacements.
+2.  Hyperparameter Tuning for optimal performance of deep PKNs
+3.  Novel and stable variants of PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
+4.  Dynamic Universal Tuning for better generations of approximate ReLU replacements.
 
 # How to use
-1. Clone this repository or use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
+1. Clone this repository OR use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 ```
-<p align="justify"> Note that PolyKerv performance is heavily dependent on the following factors: 
-    -   Architecture
-    -   Learning Rate
-    -   Polynomial degree (dp)
-    -   Balance factor (cp). 
-    
-Try to run as much experiments as you can.</p>
 
 2. Pip/Conda install the following packages
     - Pytorch (v1.10, v1.11)
