@@ -51,7 +51,7 @@ Our major observation was how unstable PKNs are. We were unsuccessful in trainin
 4.  Dynamic Universal Tuning for better generations of approximate ReLU replacements.
 
 # How to use
-1. Clone this repository OR use the Polynomial Convolution by the Kervolutional Neural Network [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
+1. Clone this repository OR use the Polynomial Convolution by the amazing Chen Wang, the "Kervolutional Neural Network" [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py)
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
