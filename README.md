@@ -58,7 +58,7 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 ```
 
 2. Pip/Conda install the following packages
-    - Pytorch (v1.10, v1.11)
+    - Pytorch
    ```
    conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
    ```
