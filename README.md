@@ -86,4 +86,3 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 - [X] Create a wrapper for pretrained examples or called models
 - [ ] Notebooks for easier use/Tutorials
 - [ ] Add links to pretrained PKNs
-- [ ] Add codes for other models
