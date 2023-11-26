@@ -85,4 +85,3 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 - [X] Show examples [@model.py](https://github.com/Ti-Oluwanimi/PolyKervNets/blob/main/Scripts/model.py)
 - [X] Create a wrapper for pretrained examples or called models
 - [ ] Notebooks for easier use/Tutorials
-- [ ] Add links to pretrained PKNs
