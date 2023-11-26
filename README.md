@@ -79,9 +79,3 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     git clone https://github.com/mc2-project/delphi
     ```
     - Follow the instructions on the [Delphi](https://github.com/mc2-project/delphi) repository
-
-# To do:
-- [X] Create a repository for PKNs.
-- [X] Show examples [@model.py](https://github.com/Ti-Oluwanimi/PolyKervNets/blob/main/Scripts/model.py)
-- [X] Create a wrapper for pretrained examples or called models
-- [ ] Notebooks for easier use/Tutorials
