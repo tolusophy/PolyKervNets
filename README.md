@@ -70,7 +70,7 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
     
 3. To run:
     ```
-    python Train.py
+    python train.py
     ```
 
 4. To reproduce our Delphi based private inference results ([paper](https://eprint.iacr.org/2020/050.pdf)):
