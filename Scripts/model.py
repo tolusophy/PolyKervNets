@@ -1,72 +1,49 @@
-##Define your model here i.e.
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
-from torch.autograd import Function
-from torch.nn.modules.module import Module
-from torch.nn.parameter import Parameter
-from torch.nn.functional import conv2d
-import torch.nn.functional as F
+from torchvision import datasets
+import torchvision.models as models
+import torchvision.transforms as transforms
 import numpy as np
-#you can use PKNs as either convolution or activation incase your model is pretrained
-#and you want to remove the ReLU functions
-from .wrapper import polykerv2d, pkn_act 
-from .resnet import ResNet
-from .pkn import Kerv2d
-from .kernel import PolynomialKernel as PK
-from torchsummary import summary
+from tqdm import tqdm
+import os
+import torch.nn.functional as F
+import torch.optim as optim
 
-#Here are 3 examples of how to use PKNs
 
-#Example 1
-
-# model = ResNet.from_name('resnet10_2')
-# model.fc = (model.fc.in_features, 10)
-# polykerv2d(model)
-
-#Example 2
-
-# model = ResNet.from_pretrained('resnet18', num_classes=10) 
-# #only 18, 32, 50, 101 and 152 are pretrained
-# pkn_act(model)
-
-#Example 3
-
-nn.Kerv2d = Kerv2d
-class model(nn.Module):
-    def __init__(self, num_classes):
-        super().__init__()
-        self.drop = nn.Dropout(p=0.2)
-        self.kerv = PK()
-
-        self.conv1 = nn.Kerv2d(3, 64, kernel_size=7, stride=2)
-        self.bn1 = nn.BatchNorm2d(64)
-        self.conv2 = nn.Kerv2d(64, 256, kernel_size=7, stride=2)
-        self.bn = nn.BatchNorm2d(256)
-
-        self.pool = nn.AvgPool2d(2)
-
-        self.conv3 = nn.Conv2d(256, 256, kernel_size=7, stride=2)
-        self.fc1 = nn.Linear(30976, 512)
-        self.bn3 = nn.BatchNorm1d(512)
-        self.fc = nn.Linear(512, num_classes)
+class Model(nn.Module):
+    def __init__(self, model_name, num_classes, pretrained=True):
+        super(Model, self).__init__()
+        '''
+        # Load the pretrained model from the Model Hub. 
+        # Note that this was only made for VGG and ResNet models. 
+        # You can add your pytorch models here too or create a whole model definition.
+        '''
+        
+        if hasattr(models, model_name):
+            self.model = getattr(models, model_name)(pretrained=pretrained)
+        elif model_name == 'resnet10':
+            self.model = getattr(models, 'resnet18')(pretrained=pretrained)
+            self.model.layer3 = nn.Identity()
+            self.model.layer4 = nn.Identity()
+        elif model_name == 'resnet14':
+            self.model = getattr(models, 'resnet18')(pretrained=pretrained)
+            self.model.layer4 = nn.Identity()
+        else:
+            raise ValueError(f"Unsupported model name: {model_name}")
+        
+        if 'resnet' in model_name:
+            # Get the number of features in the last fully connected layer
+            if model_name == 'resnet10':
+                self.model.fc = nn.Linear(128, num_classes)
+            if model_name == 'resnet14':
+                self.model.fc = nn.Linear(256, num_classes)
+            else:
+                in_features = self.model.fc.in_features
+                # Replace the last fully connected layer with a new linear layer
+                self.model.fc = nn.Linear(in_features, num_classes)
+        else:
+            raise ValueError("Unsupported model type")
 
     def forward(self, x):
-        x = self.bn1(self.conv1(x))
-        x = self.bn(self.conv2(x))
-        x = self.drop(x)
-        
-        x = self.bn(self.conv3(x))
-        x = self.pool(x)
-
-        x = torch.flatten(x, 1)
-
-        x = self.bn3(self.fc1(x))
-        x = self.drop(self.kerv(x))
-
-        x = self.fc(x)
+        x = self.model(x)
         return x
-
-model = model(num_classes=10)
-
-summary(model, (3,224,224))
