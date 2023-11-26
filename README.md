@@ -87,4 +87,3 @@ git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
 - [ ] Notebooks for easier use/Tutorials
 - [ ] Add links to pretrained PKNs
 - [ ] Add codes for other models
-- [ ] Create a TensorFlow version
