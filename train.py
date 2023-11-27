@@ -30,8 +30,8 @@ test_transform = transforms.Compose([transforms.Resize(224),
                                 transforms.transforms.ToTensor(), 
                                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
-train_data = datasets.CIFAR100('data', train=True, download=True, transform=train_transform)
-test_data = datasets.CIFAR100('data', train=False, download=True, transform=test_transform)
+train_data = datasets.CIFAR10('data', train=True, download=True, transform=train_transform)
+test_data = datasets.CIFAR10('data', train=False, download=True, transform=test_transform)
 
 batch_size = 128
 
@@ -199,7 +199,7 @@ def test_model(model, test_loader, device):
     return accuracy
 
 torch.manual_seed(0)
-model = Model(model_name='resnet50', num_classes=100, pretrained=True).to('cuda')
+model = Model(model_name='resnet50', num_classes=10, pretrained=True).to('cuda')
 
 # teacher_model = Model(model_name='resnet50',num_classes=10, pretrained=True).to('cuda')
 # student_model = Model(model_name='resnet50', num_classes=10, pretrained=True).to('cuda')
