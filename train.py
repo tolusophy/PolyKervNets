@@ -30,8 +30,8 @@ test_transform = transforms.Compose([transforms.Resize(224),
                                 transforms.transforms.ToTensor(), 
                                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
-train_data = datasets.CIFAR10('data', train=True, download=True, transform=train_transform)
-test_data = datasets.CIFAR10('data', train=False, download=True, transform=test_transform)
+train_data = datasets.CIFAR100('data', train=True, download=True, transform=train_transform)
+test_data = datasets.CIFAR100('data', train=False, download=True, transform=test_transform)
 
 batch_size = 128
 
@@ -199,7 +199,11 @@ def test_model(model, test_loader, device):
     return accuracy
 
 torch.manual_seed(0)
-model = Model(model_name='resnet50', num_classes=10, pretrained=True).to('cuda')
+model = Model(model_name='resnet50', num_classes=100, pretrained=True).to('cuda')
+
+# teacher_model = Model(model_name='resnet50',num_classes=10, pretrained=True).to('cuda')
+# student_model = Model(model_name='resnet50', num_classes=10, pretrained=True).to('cuda')
+
 # model.load_state_dict(torch.load('model.pth'))
 
 '''
@@ -211,13 +215,28 @@ To change the kernel type in PKN2d, go to the pkn.py file and switch the kernel 
 actwrapper(model, ReactPKN)
 # convwrapper(model, PKN2d) 
 
-summary(model, (3,224,224))
+# actwrapper(student_model, ReactPKN)
+# convwrapper(student_model, PKN2d) 
 
-optimizer = MomoAdam(model.parameters(), lr=5e-6)
+summary(model, (3,224,224))
+# summary(student_model, (3,224,224))
+
+optimizer = MomoAdam(model.parameters(), lr=3e-5)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.9, patience=10, verbose=True)
 loss_fn = nn.CrossEntropyLoss()
 
-'use train() for normal training and trainkd() for knowledge distillation'
+# teacher_optimizer = MomoAdam(teacher_model.parameters(), lr=3e-4)
+# student_optimizer = MomoAdam(student_model.parameters(), lr=5e-6)
+# student_scheduler = optim.lr_scheduler.StepLR(student_optimizer, step_size=20, gamma=0.9)
+# teacher_scheduler = optim.lr_scheduler.StepLR(teacher_optimizer, step_size=20, gamma=0.9)
+# teacher_loss_fn = nn.CrossEntropyLoss()
+# student_loss_fn = nn.KLDivLoss(reduction='batchmean')
+
+# use train() for normal training and trainkd() for knowledge distillation
 
 model = train(model, train_loader, test_loader, loss_fn, optimizer, scheduler, num_epochs=200)
+# model = trainkd(teacher_model, student_model, train_loader, test_loader, 
+#           teacher_loss_fn, student_loss_fn, teacher_optimizer, student_optimizer, 
+#           student_scheduler=None, teacher_scheduler=None, num_epochs=200)
+
 torch.save(model.state_dict(), 'model.pth')
