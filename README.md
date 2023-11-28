@@ -43,7 +43,7 @@ Link to paper: Coming Soon
 |  PKN-3 (Ours) |    98.45    |    783.4    |    2767   |
 
 # Future Work
-Our major observation was how unstable PKNs are (New update. Regularized PolyKervNets coming soon). We were unsuccessful in training PKN-50 (ResNet-50). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right. Future work in this domain include:
+Our major observation was how unstable PKNs are (New update. Regularized PolyKervNets coming soon). We were unsuccessful in training PKN-50 (ResNet-50) (RPKNs was successful). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right. Future work in this domain include:
 
 1. Optimized Architectural design of PKNs for DNNs (One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)).
 2. Hyperparameter Tuning for optimal performance of deep PKNs (Regularized PolyKervNets has done this). Further work to be done are:
