@@ -45,10 +45,13 @@ Link to paper: Coming Soon
 # Future Work
 Our major observation was how unstable PKNs are (New update. Regularized PolyKervNets coming soon). We were unsuccessful in training PKN-50 (ResNet-50). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right. Future work in this domain include:
 
-1. Optimized Architectural design of PKNs for DNNs
-2. Hyperparameter Tuning for optimal performance of deep PKNs
-3. Novel and stable variants of PKNs. One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)
-4. Dynamic Universal Tuning for better generations of approximate ReLU replacements.
+1. Optimized Architectural design of PKNs for DNNs (One direction is Pi-Nets [Chrysos et al](https://arxiv.org/abs/2003.03828)).
+2. Hyperparameter Tuning for optimal performance of deep PKNs (Regularized PolyKervNets has done this). Further work to be done are:
+   - Investigating the potential benefits of combining R-PKNs with gradient clipping to determine if this approach can yield comparable or superior results in terms of stability and overall performance.
+   - Exploring layer-wise learning rate initialization, where deeper layers are assigned different learning rates than initial layers, in order to further optimize the training process for polynomial-based networks.
+   - Exploring alternative optimization techniques, such as Quasi-Newton based approaches, to determine if certain types of optimizers exhibit superior performance and convergence properties when applied to polynomial-based networks.
+   - Extending the scope of our conclusions to assess whether they are applicable to other polynomial-based approaches, beyond RPKRs, in various deep learning scenarios.
+   - Evaluating the generalizability of our approach to different datasets and model architectures, such as Vision Transformers (ViTs), to determine its effectiveness in a broader context.
 
 # How to use
 1. Use the Kerv2D by Chen Wang (RECOMMENDED), the "Kervolutional Neural Network" [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py). Otherwise, clone this repository.
