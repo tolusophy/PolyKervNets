@@ -54,7 +54,7 @@ Our major observation was how unstable PKNs are (New update. Regularized PolyKer
    - Evaluating the generalizability of our approach to different datasets and model architectures, such as Vision Transformers (ViTs), to determine its effectiveness in a broader context.
 
 # How to use
-1. Use the Kerv2D by Chen Wang (RECOMMENDED), the "Kervolutional Neural Network" [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py). Otherwise, clone this repository.
+1. Use the Kerv2D by Chen Wang, the "Kervolutional Neural Network" [author](https://github.com/wang-chen/kervolution/blob/unfold/kervolution.py). Otherwise, clone this repository.
 
 ```
 git clone https://github.com/Ti-Oluwanimi/PolyKervNets.git
