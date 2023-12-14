@@ -20,7 +20,7 @@ Update: A new version of PolyKervNets is at [Link](soon)
 # Future Work
 Our major observation was how unstable PKNs are. We were unsuccessful in training PKN-50 (ResNet-50) (RPKNs was successful). PKNs are sensitive to factors such as Architecture size and complexity, Learning Rate, Polynomial degree (dp), Balance factor (cp), dataset, etc. One requires careful hyperparameter tuning to get it right.
 
-###Update: We were able to build a more stable version of PKNs. New future directions are lsited below:
+### Update: We were able to build a more stable version of PKNs. New future directions are lsited below:
 
 1. Investigating the potential benefits of combining R-PKNs with gradient clipping to determine if this approach can yield comparable or superior results in terms of stability and overall performance.
 2. Exploring layer-wise learning rate initialization, where deeper layers are assigned different learning rates than initial layers, in order to further optimize the training process for polynomial-based networks. A quick experiment with this gave RPKR-50 an accuracy of 87.9\% without requiring tuning or knowledge distillation.
