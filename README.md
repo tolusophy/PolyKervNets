@@ -7,7 +7,7 @@
 # Results
 Check Paper: [IEEE](https://ieeexplore.ieee.org/abstract/document/10136177), [OpenReview](https://openreview.net/pdf?id=OGzt9NKC0lO), [ResearchGate](https://www.researchgate.net/publication/371230167_PolyKervNets_Activation-free_Neural_Networks_For_Efficient_Private_Inference)
 
-Update: A new version of PolyKervNets is at [Cryptology](https://eprint.iacr.org/2023/1917)
+Update: A new version of PolyKervNets is at [Cryptology](https://eprint.iacr.org/2023/1917), [AxXiv](https://arxiv.org/abs/2312.15229)
 
 # How to use
 1. Clone this repository.
